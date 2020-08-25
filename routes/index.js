@@ -24,7 +24,7 @@ router.get('/chat', function(req, res, next) {
       console.log(err + 'javob yoq');
    }
    else {
-     res.render('chatOn', {
+     res.render('chatIn', {
         title: 'Express' ,
         user:user
       });
