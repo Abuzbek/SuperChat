@@ -1,0 +1,60 @@
+<section class="index form">
+    <div class="container d-flex justify-content-center align-items-center h-100">
+
+
+        <div class="text-center">
+            <a id="btn" href="" class="btn btn-default btn-rounded" data-toggle="modal"
+                data-target="#orangeModalSubscription">Sign Chat Room </a>
+        </div>
+
+    </div>
+</section>
+<div class="modal fade active" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-notify " role="document">
+        <form method="POST" action="/">
+            <div class="modal-content elegant-color">
+                <!--Header-->
+                <div class="modal-header elegant-color-dark text-center">
+                    <h4 class="modal-title white-text w-100 font-weight-bold py-2">Join AbuzGram</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="md-form mb-5">
+                        <i class="far fa-user prefix white-text"></i>
+                        <input type="text" id="form1" name="name" class="form-control validate">
+                        <label class="white-text" data-error="wrong" data-success="right" for="form1">Your
+                            name</label>
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fas fa-door-open white-text prefix"></i>
+                        <input type="text" id="form3" name="select" class="form-control validate dropdown-toggle"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <label class="white-text active"  data-error="wrong" data-success="right" for="form3">
+                            Select a room name</label>
+                        <div class="dropdown-menu dropdown-primary">
+                            <a class="dropdown-item input_drop">Action</a>
+                            <a class="dropdown-item input_drop">Another action</a>
+                            <a class="dropdown-item input_drop">Something else here</a>
+                            <a class="dropdown-item input_drop">Something else here</a>
+                        </div>
+                    </div>
+                    <!--/Blue select-->
+                    <!--Message-->
+
+                </div>
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <button type="submit" class="btn elegant-color-dark waves-effect text-white">Send <i
+                    class="far fa-paper-plane ml-1"></i></button>
+                </div>
+            </div>
+        </form>
+
+        <!--/.Content-->
+    </div>
+</div>

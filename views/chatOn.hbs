@@ -1,0 +1,53 @@
+<section class="chat">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-lg-3 p-0 h-100">
+                <div class="roomArea">
+                    <div class="heading">
+                        <img src="/images/logo.png" alt="" class="logoHeading">
+                        <h1>
+                            buzGram
+                        </h1>
+                    </div>
+                    <div class="rooms">
+                        <h2>Room name</h2>
+                        <div class="roomName">
+                            <span>MERN Group</span>
+                        </div>
+                    </div>
+                    <div class="users">
+                        <div class="headingUser">
+                            <h3>Users</h3>
+                        </div>
+                        <ul class="usersParent">
+                            {{#each user}}
+                            <li class="waves-effect">
+                                <a href="#!"><i class="fas fa-user"></i>{{this.name}}</a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 p-0">
+                <div class="functionNav elegant-color-dark d-flex justify-content-end align-items-center">
+                    <div class="md-form">
+                        <a class="btn" id="clickBtnDopFunction">
+                            <i class="fas fa-ellipsis-v white-color"></i>
+                        </a>
+                        <ul class="dopFunctionTable">
+                            <li>
+                                <a href="/logout" class="btn btn-elegant">Logaut</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="chatArea d-flex justify-content-center align-items-center">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
