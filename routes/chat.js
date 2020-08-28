@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
 router.post('/:id', upload.single('accountImg'), async (req, res) => {
   try {
       let user = {
-        name:req.body.name
+        name:req.body.name,
       }
       const account = await ChatUsers.findById(req.params.id)
       console.log(account.accountImg);
@@ -39,7 +39,7 @@ router.post('/:id', upload.single('accountImg'), async (req, res) => {
       }
       console.log(req.file);
       if (req.file) {
-          user.accountImg = '/images/' + req.file.filename
+          user.accountImg = req.file.filename
       }
       const query = { _id: req.params.id }
       ChatUsers.updateOne(query, user, (err) => {

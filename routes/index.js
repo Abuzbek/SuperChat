@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const ChatUsers = require('../model/ChatUsers')
 const upload = require('../middleware/file')
-const toDeleteFile = require('../utils/todelete')
+// const toDeleteFile = require('../utils/todelete')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -26,9 +26,9 @@ router.post('/', upload.single('accountImg'), (req, res, next) => {
         res.redirect('/chat')
       }
     })
-    if (user.accountImg) {
-      toDeleteFile(user.accountImg);
-    }
+    // if (user.accountImg) {
+    //   toDeleteFile(user.accountImg);
+    // }
     console.log(req.file, req.body);
   } catch (error) {
     console.log(error);
