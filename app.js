@@ -18,6 +18,7 @@ db.once('open', function() {
 //========== mongoDb conecction ==========
 
 const indexRouter = require('./routes/index');
+const chatRouter = require('./routes/chat');
 const usersRouter = require('./routes/users');
 
 const app = express();
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 
 
 app.use('/', indexRouter);
+app.use('/chat', chatRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

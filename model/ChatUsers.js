@@ -9,6 +9,10 @@ const ChatUsers = new Schema({
     select:{
         type:String,
         required:true
+    },
+    accountImg:{
+        type:String,
+        default:'user.png'
     }
 })
 module.exports = mongoose.model('chatUser' , ChatUsers)
