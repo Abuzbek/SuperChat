@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const lessMiddleware = require('less-middleware');
 const logger = require('morgan');
 
-//========== mongoDb conecction ==========
+//========== mongoDb conection ==========
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/chat', {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
@@ -15,11 +15,15 @@ db.on('error', ()=>{
 db.once('open', function() {
   console.log('mongodbga local ulandik');
 });
-//========== mongoDb conecction ==========
+//========== mongoDb conection ==========
+
+//  ====== routerlar =============
 
 const indexRouter = require('./routes/index');
 const chatRouter = require('./routes/chat');
 const usersRouter = require('./routes/users');
+
+//  ====== routerlar =============
 
 const app = express();
 
@@ -31,9 +35,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+// ========== less uchun yonalish =============
 app.use(lessMiddleware(path.join(__dirname, 'public')));
+// ========== less uchun yonalish =============
+
+// ========== papkalar uchun yonalish =============
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
+// ========== papkalar uchun yonalish =============
 
 
 app.use('/', indexRouter);

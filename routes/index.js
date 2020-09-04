@@ -1,13 +1,26 @@
 var express = require('express');
 var router = express.Router();
+// ============== malumotlar ombori ulanish  ==============
 const ChatUsers = require('../model/ChatUsers')
+// ============== malumotlar ombori ulanish  ==============
+// ============== rasim images fayiliga yuklash jarayoni   ==============
 const upload = require('../middleware/file')
-// const toDeleteFile = require('../utils/todelete')
+// ============== rasim images fayiliga yuklash jarayoni   ==============
 
-/* GET home page. */
+// ============== rasim images fayilidan ochirish jarayoni   ==============
+
+const toDeleteFile = require('../utils/todelete')
+// ============== rasim images fayilidan ochirish jarayoni   ==============
+
+
+
+/*============== GET home page. ============== */
+
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
+/*============== GET home page.============== */
+
 router.post('/', upload.single('accountImg'), (req, res, next) => {
   try {
     let user = {
@@ -35,8 +48,12 @@ router.post('/', upload.single('accountImg'), (req, res, next) => {
   }
 
 });
+//  ========= logaut qismi =============
 
 router.get('/logout', (req, res, next) => {
   res.redirect('/')
 })
+
+//  ========= logaut qismi =============
+
 module.exports = router;

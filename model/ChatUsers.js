@@ -13,6 +13,6 @@ const ChatUsers = new Schema({
     accountImg:{
         type:String,
         default:'user.png'
-    }
+    },
 })
 module.exports = mongoose.model('chatUser' , ChatUsers)

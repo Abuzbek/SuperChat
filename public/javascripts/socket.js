@@ -1,12 +1,22 @@
 // const socket = io.connect("/")
 const socketIo = io()
 
+// ========== QS moduli ulanish ========== 
 
+const {name,select,accountImg} = Qs.parse(location.search , {
+    ignoreQueryPrefix:true,
+})
+console.log(name,select,accountImg);
+// ========== QS moduli ulanish ========== 
+//  ============= backenddan qabul qilinvotti ----------
 socketIo.on('message' , (data)=>{
     console.log(data);
     cardMsg(data)
     scrollEl()
 })
+//  ============= backenddan qabul qilinvotti ----------
+//  ============= habar yuborish backendga ----------
+
 $('#preventButton').click((e)=>{
     e.preventDefault();
     let inp = $('#messageinp')
@@ -15,7 +25,9 @@ $('#preventButton').click((e)=>{
     inp.val('')
     scrollEl()
 })
+//  ============= habar yuborish backendga ----------
 
+//  ============= habar korinishi  ----------
 
 const cardMsg = (message)=>{
     let card = document.createElement('div')
@@ -40,7 +52,13 @@ const cardMsg = (message)=>{
     let chatArea = document.querySelector('.chatArea')
     chatArea.appendChild(card)
 }
+//  ============= habar korinishi  ----------
+
+//  ============= scroll korinishi  ----------
+
 const scrollEl = ()=>{
     const el = document.querySelector('.chatArea')
     el.scrollTop = el.scrollHeight
 }
+
+//  ============= habar korinishi  ----------
